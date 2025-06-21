@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Hijab Zahras</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mengatur font global ke Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffe4e6; /* Light pink background */
+        }
+        /* Warna dominan pink */
+        :root {
+            --primary-pink: #f472b6; /* Rose 400 */
+            --secondary-pink: #fbcfe8; /* Pink 200 */
+            --dark-pink: #db2777; /* Rose 600 */
+            --light-pink: #fff0f5; /* Blush pink */
+            --text-color: #333;
+            --white-color: #ffffff;
+        }
+
+        /* Kustomisasi Tailwind untuk warna pink */
+        .bg-primary-pink { background-color: var(--primary-pink); }
+        .text-primary-pink { color: var(--primary-pink); }
+        .hover\:bg-dark-pink:hover { background-color: var(--dark-pink); }
+        .bg-secondary-pink { background-color: var(--secondary-pink); }
+        .bg-light-pink { background-color: var(--light-pink); }
+        .border-primary-pink { border-color: var(--primary-pink); }
+
+        /* Styling tambahan untuk elemen */
+        .container {
+            max-width: 1200px;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-primary-pink p-4 shadow-lg sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-3xl font-bold rounded-lg p-2 transition-transform transform hover:scale-105">Zahras</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-white text-lg hover:text-light-pink transition-colors p-2 rounded-md">Beranda</a>
+                <a href="#products" class="text-white text-lg hover:text-light-pink transition-colors p-2 rounded-md">Produk</a>
+                <a href="#about" class="text-white text-lg hover:text-light-pink transition-colors p-2 rounded-md">Tentang Kami</a>
+                <a href="#contact" class="text-white text-lg hover:text-light-pink transition-colors p-2 rounded-md">Kontak</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-pink mt-2 rounded-lg shadow-md">
+            <a href="#hero" class="block text-white text-lg p-3 hover:bg-dark-pink rounded-md">Beranda</a>
+            <a href="#products" class="block text-white text-lg p-3 hover:bg-dark-pink rounded-md">Produk</a>
+            <a href="#about" class="block text-white text-lg p-3 hover:bg-dark-pink rounded-md">Tentang Kami</a>
+            <a href="#contact" class="block text-white text-lg p-3 hover:bg-dark-pink rounded-md">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-secondary-pink text-gray-800 py-20 md:py-32 text-center rounded-b-xl shadow-lg m-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-primary-pink drop-shadow-lg">
+                Tampil Anggun dengan Koleksi Hijab Terbaik
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Temukan hijab impian Anda dari berbagai gaya, bahan, dan warna yang memukau. Kualitas premium untuk kenyamanan maksimal.
+            </p>
+            <a href="#products" class="bg-primary-pink text-white text-xl font-bold py-4 px-8 rounded-full shadow-lg hover:bg-dark-pink transition-all duration-300 transform hover:scale-105">
+                Lihat Produk Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="py-16 bg-white m-4 rounded-xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary-pink">Koleksi Hijab Pilihan</h2>
+            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="bg-secondary-pink py-16 m-4 rounded-xl shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-primary-pink">Tentang Zahras</h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                Zahras berkomitmen untuk menyediakan koleksi hijab modern dan berkualitas tinggi yang sesuai dengan gaya hidup wanita muslimah masa kini. Kami percaya bahwa setiap wanita berhak merasa percaya diri dan cantik dengan pilihan hijabnya. Dengan bahan pilihan dan desain inovatif, kami hadir untuk melengkapi penampilan Anda di setiap kesempatan.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white m-4 rounded-xl shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-primary-pink">Hubungi Kami</h2>
+            <p class="text-lg mb-6">
+                Punya pertanyaan atau ingin tahu lebih banyak? Jangan ragu untuk menghubungi kami melalui WhatsApp.
+            </p>
+            <a href="https://wa.me/6285240118570" target="_blank" class="inline-block bg-primary-pink text-white text-xl font-bold py-3 px-6 rounded-full shadow-lg hover:bg-dark-pink transition-all duration-300 transform hover:scale-105">
+                <svg class="inline-block w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.52 3.4 1.48 4.85l-1.52 5.57 5.69-1.49c1.37.75 2.92 1.15 4.54 1.15 5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zm.04 18.01c-1.48 0-2.92-.4-4.18-1.12l-2.92.77.79-2.87c-.82-1.28-1.27-2.75-1.27-4.28 0-4.5 3.65-8.15 8.15-8.15s8.15 3.65 8.15 8.15-3.65 8.15-8.15 8.15zm4.07-5.59c-.22-.11-.92-.45-1.06-.5-.14-.05-.24-.07-.34.07-.1.14-.39.5-.48.6-.09.1-.19.12-.31.05-.12-.07-.5-.19-.95-.59-.35-.3-.85-.75-1.19-1.29-.34-.54-.03-.83.24-.97.23-.12.51-.31.69-.47.19-.16.25-.28.37-.47.12-.19.06-.35-.01-.48-.07-.13-.64-.29-.88-.41-.24-.12-.2-.11-.34-.11h-.31c-.11 0-.29.04-.45.2c-.16.16-.62.6-.62 1.46 0 .86.64 1.69.73 1.79.09.1.9 1.46 2.18 2.01 1.28.55 1.54.43 1.82.3.28-.13.92-.38 1.06-.62.14-.24.14-.45.1-.59-.03-.14-.14-.22-.27-.28z"/></svg>
+                Chat via WhatsApp
+            </a>
+            <p class="text-sm mt-4">Nomor WhatsApp: 085240118570</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-pink text-white py-8 text-center rounded-t-lg mt-4 shadow-lg">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 Zahras. Semua hak dilindungi.</p>
+            <div class="flex justify-center items-center space-x-6 mt-4">
+                <a href="#" class="text-white hover:text-light-pink transition-colors">Kebijakan Privasi</a>
+                <a href="#" class="text-white hover:text-light-pink transition-colors">Syarat & Ketentuan</a>
+                <a href="https://instagram.com/yourusername" target="_blank" class="text-white hover:text-light-pink transition-colors flex items-center">
+                    <!-- Instagram Icon SVG -->
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.747 1.297A6.471 6.471 0 0 0 1.298 7.746v8.508c0 3.55 2.898 6.449 6.449 6.449h8.508a6.47 6.47 0 0 0 6.449-6.449V7.746a6.471 6.471 0 0 0-6.449-6.449H7.747zm7.553 3.653c1.065 0 1.928.863 1.928 1.928s-.863 1.928-1.928 1.928-1.928-.863-1.928-1.928.863-1.928 1.928-1.928zm-3.79 3.018a4.67 4.67 0 1 1 0 9.34 4.67 4.67 0 0 1 0-9.34zm0 1.579a3.09 3.09 0 1 0 0 6.18 3.09 3.09 0 0 0 0-6.18z"/>
+                    </svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data produk dengan tambahan properti 'stock'
+        const products = [
+            {
+                id: 1,
+                name: 'Hijab Pashmina Ceruty',
+                price: 'Rp 45.000',
+                stock: 10, // Tambah stok
+                image: 'https://placehold.co/400x400/f472b6/ffffff?text=Hijab+Pashmina',
+                description: 'Pashmina ceruty premium, ringan, jatuh, dan mudah dibentuk. Cocok untuk tampilan kasual maupun formal.'
+            },
+            {
+                id: 2,
+                name: 'Hijab Segi Empat Voal Premium',
+                price: 'Rp 60.000',
+                stock: 5, // Tambah stok
+                image: 'https://placehold.co/400x400/db2777/ffffff?text=Hijab+Voal',
+                description: 'Voal super premium, adem, tidak licin, dan tegak di dahi. Pilihan terbaik untuk sehari-hari.'
+            },
+            {
+                id: 3,
+                name: 'Hijab Bergo Instan',
+                price: 'Rp 35.000',
+                stock: 0, // Contoh stok habis
+                image: 'https://placehold.co/400x400/fbcfe8/333333?text=Hijab+Bergo',
+                description: 'Bergo instan praktis, langsung pakai, anti ribet. Nyaman dan stylish untuk aktivitas padat.'
+            },
+            {
+                id: 4,
+                name: 'Hijab Sporty Jersey',
+                price: 'Rp 50.000',
+                stock: 8,
+                image: 'https://placehold.co/400x400/f472b6/ffffff?text=Hijab+Sporty',
+                description: 'Hijab sporty bahan jersey, adem dan menyerap keringat. Sempurna untuk berolahraga.'
+            },
+            {
+                id: 5,
+                name: 'Hijab Syar\'i Jumbo',
+                price: 'Rp 85.000',
+                stock: 3,
+                image: 'https://placehold.co/400x400/db2777/ffffff?text=Hijab+Syar%27i',
+                description: 'Hijab syar\'i jumbo, menutupi dada, bahan adem dan tidak menerawang. Tampil syar\'i dan elegan.'
+            },
+            {
+                id: 6,
+                name: 'Hijab Motif Bunga',
+                price: 'Rp 75.000',
+                stock: 12,
+                image: 'https://placehold.co/400x400/fbcfe8/333333?text=Hijab+Motif',
+                description: 'Hijab segi empat dengan motif bunga cantik, bahan voal nyaman. Tambah kesan feminin pada gaya Anda.'
+            },
+            {
+                id: 7,
+                name: 'Hijab Segitiga Instan',
+                price: 'Rp 40.000',
+                stock: 7,
+                image: 'https://placehold.co/400x400/f472b6/ffffff?text=Hijab+Segitiga',
+                description: 'Hijab segitiga instan, mudah diatur, bahan berkualitas. Pilihan tepat untuk gaya cepat dan trendi.'
+            },
+            {
+                id: 8,
+                name: 'Hijab Pashmina Diamond Italiano',
+                price: 'Rp 55.000',
+                stock: 6,
+                image: 'https://placehold.co/400x400/db2777/ffffff?text=Hijab+Diamond',
+                description: 'Pashmina dengan tekstur diamond italiano, mewah dan elegan. Cocok untuk acara istimewa.'
+            }
+        ];
+
+        const productList = document.getElementById('product-list');
+        const whatsappNumber = '6285240118570';
+
+        // Fungsi untuk membuat kartu produk
+        function createProductCard(product) {
+            const productCard = document.createElement('div');
+            productCard.className = 'bg-light-pink rounded-xl shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-300';
+            productCard.setAttribute('data-product-id', product.id); // Tambahkan ID produk
+
+            // Tentukan status tombol dan teks stok
+            let buttonText = product.stock > 0 ? 'Beli Sekarang' : 'Stok Habis';
+            let buttonClass = product.stock > 0 ? 'bg-primary-pink hover:bg-dark-pink' : 'bg-gray-400 cursor-not-allowed';
+            let buttonDisabled = product.stock === 0 ? 'disabled' : '';
+
+            productCard.innerHTML = `
+                <img src="${product.image}" onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Gambar+Tidak+Tersedia';" alt="${product.name}" class="w-full h-64 object-cover object-center rounded-t-xl">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-pink">${product.name}</h3>
+                    <p class="text-gray-600 text-sm mb-2">${product.description}</p>
+                    <p class="text-gray-700 text-base font-medium mb-4">Stok: <span class="product-stock-display font-bold ${product.stock === 0 ? 'text-red-600' : 'text-green-600'}">${product.stock}</span></p>
+                    <p class="text-2xl font-bold text-dark-pink mb-4">${product.price}</p>
+                    <button class="buy-now-button w-full text-white py-3 px-4 rounded-full font-semibold transition-colors shadow-md transform duration-200 ${buttonClass}"
+                            data-product-id="${product.id}"
+                            ${buttonDisabled}>
+                        ${buttonText}
+                    </button>
+                </div>
+            `;
+            return productCard;
+        }
+
+        // Fungsi untuk memperbarui tampilan kartu produk
+        function updateProductCard(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const cardElement = document.querySelector(`[data-product-id="${productId}"]`);
+            if (cardElement) {
+                const stockDisplay = cardElement.querySelector('.product-stock-display');
+                const buyButton = cardElement.querySelector('.buy-now-button');
+
+                if (stockDisplay) {
+                    stockDisplay.textContent = product.stock;
+                    stockDisplay.classList.remove('text-red-600', 'text-green-600'); // Bersihkan kelas sebelumnya
+                    stockDisplay.classList.add(product.stock === 0 ? 'text-red-600' : 'text-green-600');
+                }
+
+                if (buyButton) {
+                    if (product.stock === 0) {
+                        buyButton.textContent = 'Stok Habis';
+                        buyButton.classList.remove('bg-primary-pink', 'hover:bg-dark-pink');
+                        buyButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+                        buyButton.disabled = true;
+                    } else {
+                        buyButton.textContent = 'Beli Sekarang';
+                        buyButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
+                        buyButton.classList.add('bg-primary-pink', 'hover:bg-dark-pink');
+                        buyButton.disabled = false;
+                    }
+                }
+            }
+        }
+
+        // Memuat produk ke halaman saat DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+            products.forEach(product => {
+                productList.appendChild(createProductCard(product));
+            });
+        });
+
+
+        // Event listener untuk tombol "Beli Sekarang"
+        productList.addEventListener('click', (event) => {
+            if (event.target.classList.contains('buy-now-button')) {
+                const productId = parseInt(event.target.dataset.productId);
+                const product = products.find(p => p.id === productId);
+
+                if (product && product.stock > 0) {
+                    // Kurangi stok secara visual (tidak persisten)
+                    product.stock--;
+                    updateProductCard(productId); // Perbarui tampilan kartu produk
+
+                    // Buat pesan WhatsApp
+                    const message = encodeURIComponent(`Halo, saya tertarik dengan produk *${product.name}*. Stok saat ini: ${product.stock + 1}. Bisakah saya mendapatkan informasi lebih lanjut dan melakukan pembelian?`);
+                    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+                } else if (product && product.stock === 0) {
+                    // Tampilkan pesan jika stok habis (Opsional: bisa pakai modal kustom, tapi untuk kesederhanaan, ini hanya akan menonaktifkan tombol)
+                    console.log(`Maaf, stok ${product.name} sudah habis.`);
+                    // Tombol sudah dinonaktifkan oleh updateProductCard
+                }
+            }
+        });
+
+        // Toggle mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
